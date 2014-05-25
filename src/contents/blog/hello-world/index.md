@@ -1,6 +1,6 @@
 ---
 title: README
-author: the-wintersmith
+author: acidghost
 date: 2013-04-30
 template: article.jade
 ---

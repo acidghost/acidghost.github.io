@@ -1,10 +1,11 @@
 {
   "output": "./../",
+	"ignore": ["**/exclude"],
   "locals": {
     "url": "http://localhost:8080",
-    "name": "The Wintersmith's blog",
-    "owner": "Someone",
-    "description": "Ramblings of an immor(t)al demigod"
+    "name": "Andrea Jemmett",
+    "owner": "acidghost",
+    "description": "Talking about passions..."
   },
   "plugins": [
     "./plugins/paginator.coffee"
@@ -22,6 +23,10 @@
     "smartypants": true
   },
   "paginator": {
+		"articles": "blog",
+		"template": "blog.jade",
+		"first": "blog/index.html",
+		"filename": "blog/page/%d/index.html",
     "perPage": 3
   }
 }

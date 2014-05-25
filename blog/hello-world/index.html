@@ -3,23 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <title>README - The Wintersmith's blog
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>README - Andrea Jemmett
     </title>
-    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Talking about passions...">
+    <link rel="stylesheet" href="/style.min.css">
   </head>
-  <body class="article-detail">
-    <header class="header">
-      <div class="content-wrap">
-        <h1>README</h1>
-        <p class="author">Written by <span class="author"><a href="mailto:the@wintersmith.eu">The Wintersmith</a></span>
-        </p>
-      </div>
-    </header>
-    <div id="content">
-      <div class="content-wrap">
+  <body data-spy="scroll" data-target="#side-nav">
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="http://localhost:8080" class="navbar-brand">Andrea Jemmett</a>
+            <p class="description">Talking about passions...</p>
+          </div>
+          <div id="navigation" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="undefined"><a href="/">Me, myself and I</a></li>
+              <li class="undefined"><a href="/blog/">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="content">
         <article class="article">
           <section class="content"><p>Welcome to your new blog! This is the default blog template with <span class="caps">RSS</span>, pagination and an archive. There are other templates available — run <code>wintersmith new --help</code> to list&nbsp;them.</p>
 <h2 id="_repeat-after-me-_-this-is-my-blog-there-are-many-like-it-but-this-one-is-mine-my-blog-is-my-best-friend-it-is-my-life-i-must-master-it-as-i-must-master-my-life-my-blog-without-me-is-useless-without-my-blog-i-am-useless-"><em>Repeat after me:</em> This is my blog. There are many like it, but this one is mine. My blog is my best friend. It is my life. I must master it as I must master my life. My blog, without me, is useless. Without my blog, I am&nbsp;useless.</h2>
@@ -81,27 +87,23 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </section>
         </article>
       </div>
+      <aside id="side-nav">
+      </aside>
     </div>
     <footer>
-      <div class="content-wrap">
-        <div class="nav"><a href="/">« Full blog</a></div>
-        <section class="about"><p>Wintersmith is made by <a href="http://johan-nordberg.com/">Johan Nordberg</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT-license</a>.
-This footer text can be edited in about.md</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur.</p>
-<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum.</p>
+      <div class="nav"><a href="/blog/">« Full blog</a></div>
+      <div class="container">
+        <div class="row">
+          <section class="about"><p>This is my personal site, here you can find whatever <em>I</em> want you to know, so feel free to search around! :)</p>
 
-        </section>
-        <section class="copy">
-          <p>&copy; 2014 Someone &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
-          </p>
-        </section>
+          </section>
+          <section class="copy">
+            <p>&copy; 2014 acidghost &mdash; <i>gently</i> powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a>
+            </p>
+          </section>
+        </div>
       </div>
     </footer>
+    <script src="/main.js"></script>
   </body>
 </html>

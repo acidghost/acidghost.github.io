@@ -1,28 +1,24 @@
 extends layout
 
+block vars
+	- var actives = {};
+	- actives.me = 'active';
+
 block content
-  include author
-  each article in articles
-    article.article.intro
-      header
-        p.date
-          span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
-          a(href=article.url)= article.title
-      section.content
-        | !{ typogr(article.intro).typogrify() }
-        if article.hasMore
-          p.more
-            a(href=article.url) more
+	.row
+		.col-xs-12#personal-page
+			| !{ typogr(page.html).typogrify() }
 
-block prepend footer
-  div.nav
-    if prevPage
-      a(href=prevPage.url) « Newer
-    else
-      a(href='/archive.html') « Archives
-    if nextPage
-      a(href=nextPage.url) Next page »
+	.row
+		.col-xs-12#repos
 
-
-
+block side
+	ul.nav.nav-pills.nav-stacked
+		li
+			a(href="#intro-sec") Intro
+		li
+			a(href="#skills-sec") Skills
+		li
+			a(href="#projects-sec") Projects
+		li
+			a(href="#", onclick="javascript:window.scrollTo(0, 0)") Top ^
