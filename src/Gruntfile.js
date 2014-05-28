@@ -46,6 +46,18 @@ module.exports = function (grunt) {
 			}
 		},
 
+		connect: {
+			server: {
+				options: {
+					port: 8000,
+					hostname: '*',
+					base: '../',
+					keepalive: true,
+					open: true
+				}
+			}
+		},
+
 		watch: {
 			styles: {
 				files: ['contents/exclude/less/style.less'],
@@ -67,11 +79,20 @@ module.exports = function (grunt) {
 				files: ['config.json'],
 				tasks: ['wintersmith:build']
 			}
+		},
+
+		concurrent: {
+			connwatch: {
+				tasks: ['connect:server', 'watch'],
+				options: {
+					logConcurrentOutput: true
+				}
+			}
 		}
 
 	});
 
-  grunt.registerTask('build', ['less:build', 'concat:js', 'uglify:js', 'wintersmith:build']);
+  grunt.registerTask('build', ['less:build', 'concat:js', 'uglify:js', 'wintersmith:build', 'concurrent:connwatch']);
 
-	grunt.registerTask('preview', ['build', 'wintersmith:preview']);
+	grunt.registerTask('default', ['build', 'concurrent:connwatch']);
 };
