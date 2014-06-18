@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 	$('#repos').loadRepositories('acidghost');
 
-	$('a').click(function(e) {
+	$('a').not('#side-nav a').click(function(e) {
 		e.preventDefault();
 		e = $(e.target);
 		if(e.attr('href').indexOf('#') == -1) {
@@ -70,5 +70,23 @@ $(document).ready(function() {
 			$('#intro-sec').addClass('green');
 		}
 	}, 2000);
+
+	$('body').scrollspy({
+		target: '#side-nav'
+	});
+
+	// Animated scroll
+	$('a[href*=#]').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+			&& location.hostname == this.hostname) {
+			var $target = $(this.hash);
+			$target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+			if ($target.length) {
+				var targetOffset = $target.offset().top;
+				$('html,body').animate({scrollTop: targetOffset}, 1000);
+				return false;
+			}
+		}
+	});
 
 });

@@ -13,7 +13,13 @@ html(lang='en')
 					= locals.name
 			link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
 			link(rel='stylesheet', href='/style.min.css')
-	body(data-spy="scroll", data-target="#side-nav")
+	- var bodyClass = '';
+	- if (actives.me) {
+	- 	bodyClass = 'me';
+	- } else if (actives.blog) {
+	- 	bodyClass = 'blog';
+	- }
+	body(class="#{bodyClass}")
 		.container
 			nav.navbar.navbar-inverse
 				.container
@@ -33,7 +39,7 @@ html(lang='en')
 								a(href="/blog/") Blog
 			div#content
 				block content
-			aside#side-nav
+			div#side-nav
 				block side
 		footer
 			block footer

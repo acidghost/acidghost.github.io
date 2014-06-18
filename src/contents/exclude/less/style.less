@@ -4,7 +4,7 @@
 
 @body-bg: black;
 @text-color: @gray-lighter;
-@link-color: darken(@brand-danger, 10%);
+@link-color: darken(@brand-primary, 10%);
 
 @font-family-sans-serif: 'Raleway', sans-serif;
 @font-family-monospace: "Courier New", Courier, monospace;
@@ -16,7 +16,7 @@
 @container-tablet: 720px - 200px;
 
 body {
-  .animation(all 2s ease-in);
+  .animation(opacity 2s ease-in);
   &.fade {
     .opacity(0);
   }
@@ -42,24 +42,22 @@ body {
   }
 
   #content {
-    #personal-page {
-      #intro-sec {
-        font-size: 40px;
-        font-family: @font-family-monospace;
-        line-height: 44px;
-        letter-spacing: 40px;
-        color: #ffffff;
-        margin: 230px 0 300px 0;
-        .transition(color 2s ease-out);
-        &.green { color: #008000; }
-      }
-      h1, h2, h3 {
-        color: @gray-lighter;
-      }
-      h1 { font-size: 64px; }
-      h2 { font-size: 50px; }
-      h3 { font-size: 34px; }
+    #intro-sec {
+      font-size: 40px;
+      font-family: @font-family-monospace;
+      line-height: 44px;
+      letter-spacing: 40px;
+      color: #ffffff;
+      margin: 230px 0 300px 0;
+      .transition(color 2s ease-out);
+      &.green { color: #008000; }
     }
+    h1, h2, h3 {
+      color: @gray-lighter;
+    }
+    h1 { font-size: 64px; }
+    h2 { font-size: 50px; }
+    h3 { font-size: 34px; }
   }
 
   #side-nav {

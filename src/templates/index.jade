@@ -5,12 +5,19 @@ block vars
 	- actives.me = 'active';
 
 block content
-	.row
-		.col-xs-12#personal-page
-			| !{ typogr(page.html).typogrify() }
+	.row#intro-sec
+		.col-xs-10.col-sm-12
+			!=contents['intro.md'].html
 
-	.row
-		.col-xs-12#repos
+	.row#skills-sec
+		.col-xs-10.col-sm-12
+			!=contents['skills.md'].html
+
+	.row#projects-sec
+		.col-xs-10.col-sm-12
+			!=contents['projects.md'].html
+		.col-xs-10.col-sm-12
+			#repos
 
 block side
 	ul.nav.nav-pills.nav-stacked
@@ -20,5 +27,3 @@ block side
 			a(href="#skills-sec") Skills
 		li
 			a(href="#projects-sec") Projects
-		li
-			a(href="#", onclick="javascript:window.scrollTo(0, 0)") Top ^
