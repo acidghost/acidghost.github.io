@@ -58,6 +58,23 @@ body {
     h1 { font-size: 64px; }
     h2 { font-size: 50px; }
     h3 { font-size: 34px; }
+
+    article.intro {
+      margin: 60px 0px;
+      padding: 0px 20px;
+      text-align: center;
+      header {
+        .date {
+          margin-bottom: 0;
+          font-family: @font-family-monospace;
+          font-size: smaller;
+        }
+        h2 {
+          margin: 3px 0 6px 0;
+          a:hover { color: firebrick; }
+        }
+      }
+    }
   }
 
   #side-nav {
@@ -74,6 +91,11 @@ body {
     min-width: 100%;
     .copy, .about {
       .make-xs-column(6);
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 30px;
+      a { padding: 0px 4px; }
     }
   }
 

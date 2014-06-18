@@ -6,11 +6,14 @@ block vars
 
 block content
 	include author
+	- var count=0;
 	each article in articles
 		article.article.intro
 			header
 				p.date
 					span= moment.utc(article.date).format('DD. MMMM YYYY')
+					| &nbsp; - &nbsp;
+					+author(article.metadata.author)
 				h2
 					a(href=article.url)= article.title
 			section.content
@@ -18,6 +21,9 @@ block content
 				if article.hasMore
 					p.more
 						a(href=article.url) more
+		if count < articles.length-1
+			hr
+		- count++;
 
 block prepend footer
 	div.nav

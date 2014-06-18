@@ -89,4 +89,9 @@ $(document).ready(function() {
 		}
 	});
 
+	// Footer stick to bottom if body height is less than inner window height
+	if($('body').height() < window.innerHeight) {
+		$('footer').addClass('navbar-fixed-bottom');
+	}
+
 });
