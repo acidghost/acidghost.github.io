@@ -2,10 +2,11 @@
   "output": "./../",
 	"ignore": ["**/exclude"],
   "locals": {
-    "url": "http://localhost:8080",
+    "url": "http://acidghost.github.io",
     "name": "Andrea Jemmett",
     "owner": "acidghost",
-    "description": "Talking about passions..."
+    "description": "Talking about passions...",
+		"analytics": "UA-52048746-1"
   },
   "plugins": [
     "./plugins/paginator.coffee"
