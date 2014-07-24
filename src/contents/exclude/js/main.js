@@ -12,15 +12,36 @@ jQuery.fn.loadRepositories = function(username) {
 	var target = this;
 	$.githubUser(username, function(data) {
 		var repos = data.data; // JSON Parsing
+		if(data.meta.status != '200') {
+			repos = [
+				{
+					name: 'bearded-wookie',
+					language: 'JavaScript',
+					homepage: 'nan',
+					description: 'Provola'
+				},
+				{
+					name: 'geowiki',
+					language: 'JavaScript',
+					homepage: 'nan',
+					description: 'Provola'
+				}
+			];
+		}
 		sortByName(repos);
 
-		var list = $('<dl/>');
-		target.empty().append(list);
+		target.empty();
 		$(repos).each(function() {
 			if (this.name != (username.toLowerCase()+'.github.com')) {
-				list.append('<dt><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a> <em>'+(this.language?('('+this.language+')'):'')+'</em></dt>');
-				list.append('<dd>' + this.description +'</dd>');
-				list.append('<dd><iframe src="http://hopping-rabbit.herokuapp.com/barchart/'+username+'/'+this.name+'" class="chart"></iframe></dd>');
+				target.append('<div class="row">' +
+					'<div class="col-sm-4">' +
+					'<h2><a href="'+ (this.homepage?this.homepage:this.html_url) +'">' + this.name + '</a></h2>' +
+					'<h3>'+(this.language?('('+this.language+')'):'')+'</h3>' +
+					'<p>'+(this.description||'Nothing to say here...')+'</p>' +
+					'</div>' +
+					'<div class="col-sm-8"><iframe src="http://hopping-rabbit.herokuapp.com/charts/bar/'+username+'/'+this.name+'" class="chart"></iframe></div>' +
+					'</div>');
+				target.append('<hr />');
 			}
 		});
 	});
