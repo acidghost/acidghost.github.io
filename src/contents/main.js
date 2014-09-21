@@ -11182,7 +11182,7 @@ jQuery.fn.loadRepositories = function(username) {
 					'<h3>'+(this.language?('('+this.language+')'):'')+'</h3>' +
 					'<p>'+(this.description||'Nothing to say here...')+'</p>' +
 					'</div>' +
-					'<div class="col-sm-8"><iframe src="http://hopping-rabbit.herokuapp.com/charts/bar/'+username+'/'+this.name+'" class="chart"></iframe></div>' +
+					'<div class="col-sm-8"><iframe src="http://hopping-rabbit.herokuapp.com/charts/'+chartTypes[getRandomInt(0, chartTypes.length-1)]+'/'+username+'/'+this.name+'" class="chart"></iframe></div>' +
 					'</div>');
 				target.append('<hr />');
 			}
@@ -11194,6 +11194,12 @@ jQuery.fn.loadRepositories = function(username) {
 			return a.name - b.name;
 		});
 	}
+
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	var chartTypes = ['bar', 'pie', 'donut'];
 };
 
 $(document).ready(function() {
