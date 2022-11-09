@@ -9,6 +9,9 @@ Amsterdam, [VUSec](https://vusec.net).
 
 You can contact me at: `ghostemoji@fuzzing.systems` (replace `ghostemoji` with `👻`).
 
+Otherwise, find me on <a rel="me" href="https://infosec.exchange/@acidghost">
+Mastodon <img src="/assets/mastodon.svg" height="10" /></a>.
+
 ### Main interests
 - Ensemble fuzzing
 - Network server fuzzing
