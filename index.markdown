@@ -7,10 +7,9 @@ title: ""
 I'm currently a PhD candidate in the Computer Systems group at the VU
 Amsterdam, [VUSec](https://vusec.net).
 
-You can contact me at: `ghostemoji@fuzzing.systems` (replace `ghostemoji` with `👻`).
-
+You can contact me at _andrea [at] fuzzing.systems_.
 Otherwise, find me on <a rel="me" href="https://infosec.exchange/@acidghost">
-Mastodon <img src="/assets/mastodon.svg" height="10" /></a>.
+<img src="/assets/mastodon.svg" height="14" /></a>.
 
 ### Main interests
 - Ensemble fuzzing
